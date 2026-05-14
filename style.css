@@ -160,8 +160,9 @@ svg {
     fill: var(--text-dim);
 }
 
-.nav-item:hover, .nav-item.active {
-    color: var(--accent);
+.nav-item:hover svg, .nav-item:hover {
+    color: #009dfe;
+    fill: #009dfe;
 }
 
 .server-status {
@@ -231,9 +232,9 @@ svg {
     font-weight: 600;
     cursor: pointer;
 }
-
-.nav-active {
-    background: none;
+.nav-link:hover svg, .nav-link:hover {
+    color: #009dfe;
+    fill: #009dfe;
 }
 
 .overlay {
@@ -259,7 +260,16 @@ svg {
     gap: 20px;
 }
 
-.header-titles h2 { font-size: 2rem; letter-spacing: -1px; }
+.header-titles h2 {
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+h2 strong {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: var(--lngrad);
+    background-size: 500%;
+}
 .header-titles p { color: var(--text-dim); margin-top: 4px; }
 
 .search-wrapper {
@@ -288,10 +298,6 @@ svg {
     color: white;
     outline: none;
     transition: 0.3s;
-}
-
-.search-input:focus {
-    border-color: var(--accent);
 }
 
 /* --- Player Cards --- */
@@ -463,7 +469,9 @@ svg {
     gap: 24px;
     margin-bottom: 20px;
 }
-
+.tag {
+    color: #fff;
+}
 .social-icon {
     color: var(--text-dim);
     transition: 0.3s;
@@ -513,7 +521,7 @@ svg {
     position: relative;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 h4 {
     text-align: center;
@@ -556,14 +564,25 @@ select option {
     border-radius: 15px;
     position: relative;
     padding: 15px;
-    margin: 15px;
+    margin: 0 15px;
+    width: auto;
     transition: .2s ease-in-out;
     box-shadow: 0 0 10px #0b0b0bde;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); 
 }
 .boxes:hover {
     scale: 1.015;
     transform: translateY(-2px);
     box-shadow: 0 0 150px #ff00ee12, 0 10px 100px #338bff0c;
+}
+.boxes p {
+    position: relative;
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 12.5px;
+    color: #64748b;
+    display: flex;
+    margin-top: 30px;
 }
 .picture {
     width: 100px;
@@ -571,12 +590,14 @@ select option {
     border: 1px solid var(--border);
     background: var(--card-bg);
 }
-.cart-title {
+.gamemode-cart .cart-title {
     position: relative;
     text-shadow: 0 0 5px #000000;
-    color: var(--text-dim);
+    color: #009dfe;
     text-transform: uppercase;
     font-weight: 800;
+    text-align: center;
+    margin: auto;
 }
 
 #progress {
@@ -659,6 +680,16 @@ select option {
 }
 .tag strong {
     color: #fff;
+}
+.boxes {
+    margin: 15px 0;
+}
+/* Containers */
+.containers {
+    position: relative;
+    margin: auto;
+    display: block;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 }
 
